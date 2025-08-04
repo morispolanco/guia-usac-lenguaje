@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
@@ -9,6 +8,7 @@ import RegisterPage from './components/pages/RegisterPage';
 import DashboardPage from './components/pages/DashboardPage';
 import UnitPage from './components/pages/UnitPage';
 import PaymentPage from './components/pages/PaymentPage';
+import PaymentSuccessPage from './components/pages/PaymentSuccessPage';
 import ProfilePage from './components/pages/ProfilePage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Layout from './components/layout/Layout';
@@ -27,6 +27,15 @@ const App: React.FC = () => {
             element={
               <ProtectedRoute paymentRequired={false}>
                 <PaymentPage />
+              </ProtectedRoute>
+            } 
+          />
+
+          <Route 
+            path="/payment-success" 
+            element={
+              <ProtectedRoute paymentRequired={false}>
+                <PaymentSuccessPage />
               </ProtectedRoute>
             } 
           />
